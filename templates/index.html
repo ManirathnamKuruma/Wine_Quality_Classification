@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: pink;
+}
+.container {
+    padding: 50px;
+  background-color: lightblue;
+}
+
+input[type=text], textarea {
+  width: 50%;
+  padding: 9px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus {
+  background-color: #FFF59D;
+  outline: none;
+}
+ div {
+            padding: 10px 0;
+         }
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.predictbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<form action="{{ url_for('predict')}}" method="post">
+  <div class="container">
+  <center>  <h1>Wine Quality Rating Prediction</h1> </center>
+  <hr>
+<label> <b>Fixed Acidity: </b></label>
+<input type="text" name="fa" placeholder= "Enter fixed acidity value" size="15" required />
+<br>
+<label> <b>Volatile Acidity: </b></label>
+<input type="text" name="va" placeholder= "Enter volatile acidity value" size="15" required />
+<br>
+<label> <b>Citric Acid: </b></label>
+<input type="text" name="ca" placeholder= "Enter citric acid value" size="15" required />
+<br>
+<label> <b>Residual Sugar: </b></label>
+<input type="text" name="rs" placeholder= "Enter residual sugar value" size="15" required />
+<br>
+<label> <b>Chlorides: </b></label>
+<input type="text" name="chl" placeholder= "Enter chlorides value" size="15" required />
+<br>
+<label> <b>Free Sulphur Dioxide: </b></label>
+<input type="text" name="fsd" placeholder= "Enter free sulphur dioxide value" size="15" required />
+<br>
+<label> <b>Total Sulphur Dioxide: </b></label>
+<input type="text" name="tsd" placeholder= "Enter total sulphur dioxide value" size="15" required />
+<br>
+<label> <b>Density: </b></label>
+<input type="text" name="d" placeholder= "Enter density value" size="15" required />
+<br>
+<label> <b>pH: </b></label>
+<input type="text" name="ph" placeholder= "Enter pH value" size="15" required />
+<br>
+<label> <b>Sulphates: </b></label>
+<input type="text" name="s" placeholder= "Enter sulphates value" size="15" required />
+<br>
+<label> <b>Alcohol: </b></label>
+<input type="text" name="a" placeholder= "Enter alcohol value" size="15" required />
+<br>
+<br><br>
+    <button id="sub" type="submit" class="predictbtn">Predict</button>
+    <br><br><h3>{{ prediction_text }}</h3>
+</div>
+</form>
+
+</body>
+</html>
